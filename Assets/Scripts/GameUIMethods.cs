@@ -10,6 +10,7 @@ public class GameUIMethods : MonoBehaviour
 
     public void RestartLevel()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -26,5 +27,17 @@ public class GameUIMethods : MonoBehaviour
     public void LoadLevel(int indexLevel)
     {
         SceneManager.LoadScene(indexLevel);
+    }
+
+    public void OpenMenu(GameObject menu)
+    {
+        menu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void CloseMenu(GameObject menu)
+    {
+        menu.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
